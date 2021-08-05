@@ -18,9 +18,7 @@ const ModalExample = (props) => {
     } = props;
 
     const setmainimage  = (data) => {
-        console.log(data,"sended data"); 
-        setMainimg(data)
-        console.log(mainimg,"main image");
+        setMainimg(data.item)
     }
 
   return (
@@ -32,14 +30,20 @@ const ModalExample = (props) => {
                 <div className="col-12">
                     <img src={mainimg} alt="" className="img-fluid"/>
                 </div>
-                <div className="row">
-                {
-                    image.map((item,i) => (
-                        <div className="col-2" key={i}>
-                            <img src={item} alt="" onClick={ () => setmainimage({item})} className="img-fluid"/>
-                        </div>
-                    ))
-                }
+                <div className="container">
+                    <div className="row my-3">
+                    {
+                        image.map((item,i) => (
+                            <div className="col-2" key={i}>
+                                <img src={item} alt="" onClick={ () => setmainimage({item})} className="modal-image img-fluid"/>
+                            </div>
+                        ))
+                    }
+                    </div>
+                    <h3>Project Description</h3>
+                    <p>Fokus.in is a smart-goals planner based on website that help users in achieving their goals</p>
+                    <h3>Main Features</h3>
+                    <p className="main-features">1. Choose a Goal to learn\n2. Mark the steps you have done\n3. Discussion with other member about the Goal\n4. To Do list and integrate with calendar</p>
                 </div>
             </div>
         </ModalBody>
