@@ -1,0 +1,27 @@
+@import "../../assets/css/variables";
+.card{
+    border-radius: 20px !important;
+    box-shadow: 0px -1px 11px 8px rgba(0,0,0,0.07);
+    -webkit-box-shadow: 0px -1px 11px 8px rgba(0,0,0,0.07);
+    -moz-box-shadow: 0px -1px 11px 8px rgba(0,0,0,0.07);
+    .image-size{
+        color:$primaryColor;
+        width: 7em;
+        height: auto;
+    }
+    ul{
+        padding: 0;
+        list-style-type: none;
+        font-size: 24px;
+    }
+    .stack{
+       border-bottom: 3px solid $primaryColor;
+    }
+}
+
+.card:hover{
+    box-shadow: 0px -1px 11px 8px rgba(35,163,216,0.21);
+    -webkit-box-shadow: 0px -1px 11px 8px rgba(35,163,216,0.21);
+    -moz-box-shadow: 0px -1px 11px 8px rgba(35,163,216,0.21);
+    transition: .3s ease;
+}

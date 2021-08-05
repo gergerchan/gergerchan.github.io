@@ -1,0 +1,11 @@
+@import "../../assets/css/variables";
+.bg-blue{
+    background-color: $primaryColor;
+    h1,p{
+        color:white;
+    }
+    p{
+        font-size: 20px;
+        margin:0;
+    }
+}
