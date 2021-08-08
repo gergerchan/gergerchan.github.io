@@ -1,7 +1,11 @@
 @import "_variables";
 
+html {
+    scroll-behavior: smooth;
+  }
+
 .base{
-    font-family: $primaryFont
+    font-family: $primaryFont;
 }
 
 .b-700 {
@@ -10,4 +14,21 @@
 
 .f-15 {
     font-size: 15px;
+}
+.row{
+    margin-right:0px !important;
+    margin-left:0px !important;
+}
+
+
+@media screen and (max-width:575.98px) {
+    p{
+        font-size: 14px;
+    }
+    h1{
+        font-size: 32px !important;
+    }
+    h2{
+        font-size: 28px !important;
+    }
 }

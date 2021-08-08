@@ -1,53 +1,62 @@
 import {  Modal, ModalHeader, ModalBody} from 'reactstrap';
-import fokusin1 from "../../assets/img/fokusin/home.png"
-import fokusin2 from "../../assets/img/fokusin/goals.png"
-import fokusin3 from "../../assets/img/fokusin/Notes.png"
-import fokusin4 from "../../assets/img/fokusin/todo.png"
-import fokusin5 from "../../assets/img/fokusin/comment.png"
-import fokusin6 from "../../assets/img/fokusin/Date.png"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const ModalExample = (props) => {
-    const dataimage = [fokusin1,fokusin2,fokusin3,fokusin4,fokusin5,fokusin6]
-    const [image, setImage] = useState(dataimage)
-    const [mainimg, setMainimg] = useState(image[0])
     const {
         className,
         modal,
-        toggle
+        toggle,
+        data
     } = props;
 
+    const { title, access,access2,description,features,image,link,stack,image1,projectName } = data;
+
+    const [mainimg, setMainimg] = useState(image1);
+    useEffect(() => {
+        setMainimg(image1)
+    }, [image1])
     const setmainimage  = (data) => {
         setMainimg(data.item)
     }
-
   return (
     <div>
+    {data && 
       <Modal size="xl" isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Fokusin Application</ModalHeader>
+        <ModalHeader toggle={toggle}>{title}</ModalHeader>
         <ModalBody>
             <div className="row">
-                <div className="col-12">
-                    <img src={mainimg} alt="" className="img-fluid"/>
+                <div className="col-12 text-center">
+                    <img src={mainimg} alt="" className="main-image"/>
                 </div>
                 <div className="container">
-                    <div className="row my-3">
-                    {
+                    <div className="row my-3 justify-content-center">
+                    {image &&
                         image.map((item,i) => (
-                            <div className="col-2" key={i}>
+                            <div className="col-lg-2 col-4 mb-2" key={i}>
                                 <img src={item} alt="" onClick={ () => setmainimage({item})} className="modal-image img-fluid"/>
                             </div>
                         ))
                     }
                     </div>
                     <h3>Project Description</h3>
-                    <p>Fokus.in is a smart-goals planner based on website that help users in achieving their goals</p>
+                    <p>
+                        {description}
+                    </p>
                     <h3>Main Features</h3>
-                    <p className="main-features">1. Choose a Goal to learn\n2. Mark the steps you have done\n3. Discussion with other member about the Goal\n4. To Do list and integrate with calendar</p>
+                    <p className="features">{features}</p>
+                    <h3>Build with</h3>
+                    <p className="features">
+                        {stack}
+                    </p>
+                    <h3>Access this project</h3>
+                    <p className="features">
+                        {access} <a href={link}>{projectName}</a> {access2}
+                    </p>
                 </div>
             </div>
         </ModalBody>
       </Modal>
+      }
     </div>
   );
 }

@@ -5,9 +5,10 @@ import AboutMe from "../component/AboutMe/AboutMe"
 import "../assets/css/general.scss"
 import Card from "../component/TechStack/Card"
 import Project from "../component/Project/Project"
+import Connect from "../component/Connect/Connect"
 const Home = () => {
     return (
-        <div>
+        <div id="hello">
             <NavigationBar />
             <Container>
                 <Welcome />
@@ -15,6 +16,7 @@ const Home = () => {
             <AboutMe />
             <Card />
             <Project />
+            <Connect />
         </div>
     )
 }

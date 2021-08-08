@@ -1,0 +1,22 @@
+@import "../../assets/css/variables";
+
+.navbar-styling{
+    background-color: $primaryColor;
+    a{
+        color: white !important;
+        opacity: 0.8;
+    }
+    a:hover{
+        color: white;
+        opacity:  1;
+    }
+    .navbar-toggler{
+        border-color: rgba(255,255,255,1) !important;
+        color: white;
+    }
+    .title-styling{
+        white-space: pre-wrap;
+        text-align: center;
+        line-height: 20px;
+    }
+}

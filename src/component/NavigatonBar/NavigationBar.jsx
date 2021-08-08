@@ -7,9 +7,9 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText,
   Container
 } from 'reactstrap';
+import "./Navbar-styling.scss"
 
 const NavigationBar = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,20 +17,22 @@ const NavigationBar = (props) => {
     const toggle = () => setIsOpen(!isOpen);
     return (
         <>
-            <Navbar color="light" light expand="md">
+            <Navbar dark className="navbar-styling sticky-top" expand="md">
                 <Container>
-                    <NavbarBrand href="/">reactstrap</NavbarBrand>
+                    <NavbarBrand href="#hello" className="title-styling">{`gerger\nchan`}</NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
+                    <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
+                            <NavLink href="#tech-stack">Tech Stack</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                            <NavLink href="#project">Project</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="#contact">Contact</NavLink>
                         </NavItem>
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
                     </Collapse>
                 </Container>
             </Navbar> 
